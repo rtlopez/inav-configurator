@@ -252,6 +252,29 @@ const mixerList = [
         servoMixer: []
     }, // 13
     {
+        id: 15,
+        name: 'Heli 120',
+        model: 'custom',
+        image: 'custom',
+        enabled: true,
+        legacy: true,
+        platform: PLATFORM_HELICOPTER,
+        motorMixer: [
+            new MotorMixRule(1.0, 0.0, 0.0, 0.0)
+        ],
+        servoMixer: [
+            new ServoMixRule(SERVO_ELEVATOR,    INPUT_RC_AUX1,           50, 0),
+            new ServoMixRule(SERVO_ELEVATOR,    INPUT_STABILIZED_PITCH, 100, 0),
+            new ServoMixRule(SERVO_FLAPPERON_1, INPUT_RC_AUX1,           50, 0),
+            new ServoMixRule(SERVO_FLAPPERON_1, INPUT_STABILIZED_ROLL,   87, 0),
+            new ServoMixRule(SERVO_FLAPPERON_1, INPUT_STABILIZED_PITCH, -50, 0),
+            new ServoMixRule(SERVO_FLAPPERON_2, INPUT_RC_AUX1,           50, 0),
+            new ServoMixRule(SERVO_FLAPPERON_2, INPUT_STABILIZED_ROLL,  -87, 0),
+            new ServoMixRule(SERVO_FLAPPERON_2, INPUT_STABILIZED_PITCH, -50, 0),
+            new ServoMixRule(SERVO_RUDDER,      INPUT_STABILIZED_YAW,   100, 0)
+        ]
+    },             // 15
+    {
         id: 17,
         name: 'V-tail Quad',
         model: 'quad_vtail',
@@ -664,7 +687,7 @@ const platformList = [
     {
         id: 2,
         name: "Helicopter",
-        enabled: false,
+        enabled: true,
         flapsPossible: false
     },
     {
